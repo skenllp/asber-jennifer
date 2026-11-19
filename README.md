@@ -6,7 +6,7 @@ Better: run `python3 -m http.server` in this folder and visit http://localhost:8
 ## To finish
 - Music: assets/wedding-music.mp3 is included (plays after the visitor taps Open / the vinyl). Make sure you have the rights to use it if the site is public.
 - In `script.js` > CONFIG set: `phone`, `whatsapp`, `rsvpUrl` (buttons stay disabled until set) and optionally `mapsUrl`.
-- After deploying, make the `og:image` URL in `index.html` absolute.
+- Social preview is set to https://asber-jennifer.vercel.app/assets/og-invitation.jpg (deploy the whole folder so that path exists).
 
 ## Asset mapping (uploaded file -> assets/)
 Golden-Hour_Valley_with_Castle_and_Grazing_Horse -> countryside.webp
