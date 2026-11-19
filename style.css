@@ -294,10 +294,14 @@ ol { list-style: none; }
 .closing__names { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 0 .2em; font-size: clamp(3.4rem, 10vw, 7rem); margin-top: clamp(10px, 2vw, 22px); }
 .closing__date { margin-top: clamp(8px, 1.6vw, 18px); font-family: var(--f-label); font-size: clamp(.75rem, 1.6vw, 1.05rem); letter-spacing: .28em; text-transform: uppercase; color: var(--brown); }
 .closing__rule { width: min(380px, 72vw); margin: clamp(14px, 3vw, 28px) auto; }
-.rsvp__note, .contact__note { margin-top: .8em; font-style: italic; font-size: .98rem; color: var(--sepia); }
+.rsvp__note { margin-top: .8em; font-style: italic; font-size: .98rem; color: var(--sepia); }
 .contact { margin: clamp(30px, 5vw, 52px) 0; }
 .contact__title { font-family: var(--f-display); font-weight: 500; font-size: clamp(1.9rem, 4.4vw, 2.8rem); font-style: italic; color: var(--brown); margin-bottom: .5em; }
-.contact__row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.contact__list { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(18px, 4vw, 44px); }
+.contact__item { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.contact__num { font-family: var(--f-label); font-size: clamp(.95rem, 2.4vw, 1.2rem); letter-spacing: .12em; color: var(--brown); }
+.contact__actions { display: flex; gap: 10px; }
+.btn--sm { min-height: 44px; padding: .6em 1.3em; font-size: .7rem; letter-spacing: .2em; }
 
 .footer { background: var(--brown); color: rgba(248,236,215,.7); text-align: center; padding: 22px 16px calc(22px + env(safe-area-inset-bottom, 0px)); font-family: var(--f-label); font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; border-top: 1px solid rgba(184,155,106,.3); }
 

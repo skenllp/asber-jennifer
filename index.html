@@ -237,12 +237,22 @@
 
         <div class="contact" data-reveal>
           <h3 class="contact__title">Contact</h3>
-          <div class="contact__row">
-            <!-- Set CONFIG.phone / CONFIG.whatsapp in script.js. -->
-            <a class="btn btn--ghost" id="callBtn" href="#rsvp" aria-disabled="true" tabindex="-1">Call</a>
-            <a class="btn btn--ghost" id="waBtn" href="#rsvp" aria-disabled="true" tabindex="-1" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          </div>
-          <p class="contact__note" id="contactNote">Contact details will be shared soon.</p>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <span class="contact__num">+91 98461 00134</span>
+              <span class="contact__actions">
+                <a class="btn btn--ghost btn--sm" href="tel:+919846100134">Call</a>
+                <a class="btn btn--ghost btn--sm" href="https://wa.me/919846100134" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </span>
+            </li>
+            <li class="contact__item">
+              <span class="contact__num">+91 98463 40230</span>
+              <span class="contact__actions">
+                <a class="btn btn--ghost btn--sm" href="tel:+919846340230">Call</a>
+                <a class="btn btn--ghost btn--sm" href="https://wa.me/919846340230" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </span>
+            </li>
+          </ul>
         </div>
 
         <button type="button" class="btn btn--dark" id="toTop">Back to Top</button>

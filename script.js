@@ -15,10 +15,9 @@
     mapsUrl: '',
     venueQuery: 'Parappan Square International Convention Centre, Parapan Square Road, NH 66, Venniyur, Malappuram, Kerala 676508',
 
-    // PLACEHOLDERS — real details not supplied yet. Leave '' to keep the buttons disabled.
-    phone: '',      // e.g. '+91XXXXXXXXXX'
-    whatsapp: '',   // e.g. '91XXXXXXXXXX' (country code + number, digits only)
-    rsvpUrl: ''     // e.g. a Google Form / WhatsApp link
+    // Contact numbers are written directly in index.html (Contact section).
+    // RSVP is commented out in index.html; set a link here when you bring it back.
+    rsvpUrl: ''
   };
 
   const $ = (s, r = document) => r.querySelector(s);
@@ -64,11 +63,6 @@
     rsvpBtn.target = '_blank'; rsvpBtn.rel = 'noopener noreferrer';
     $('#rsvpNote').hidden = true;
   }
-  const callBtn = $('#callBtn'), waBtn = $('#waBtn');
-  let contactReady = false;
-  if (callBtn && CONFIG.phone) { enable(callBtn, 'tel:' + CONFIG.phone.replace(/[^\d+]/g, '')); contactReady = true; }
-  if (waBtn && CONFIG.whatsapp) { enable(waBtn, 'https://wa.me/' + CONFIG.whatsapp.replace(/\D/g, '')); contactReady = true; }
-  if (contactReady) $('#contactNote').hidden = true;
 
   /* ---------------- Countdown ---------------- */
   const target = new Date(CONFIG.eventISO).getTime();
