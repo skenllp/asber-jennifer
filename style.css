@@ -9,6 +9,7 @@
   --olive: #777052;
   --cream: #F8ECD7;
 
+  --paint: brightness(.76) saturate(.78) sepia(.12);
   --f-script: 'Pinyon Script', 'Great Vibes', cursive;
   --f-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --f-text: 'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -42,6 +43,7 @@ ol { list-style: none; }
   position: absolute; left: 0; top: -8%;
   width: 100%; height: 116%;
   object-fit: cover; object-position: 66% 50%;
+  filter: var(--paint);
   will-change: transform;
 }
 
@@ -118,7 +120,7 @@ ol { list-style: none; }
 .intro.is-gone { opacity: 0; visibility: hidden; pointer-events: none; }
 .intro__scene { position: absolute; inset: 0; }
 /* soft fill for the sides when the screen is wider than the portrait painting */
-.intro__backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(18px) saturate(.9) brightness(.92); transform: scale(1.1); }
+.intro__backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(18px) saturate(.75) brightness(.68); transform: scale(1.1); }
 /* the portrait painting always fits the screen height; on phones its edges are simply cropped */
 .intro__stage {
   position: absolute; top: 0; bottom: 0; left: 50%;
@@ -129,7 +131,7 @@ ol { list-style: none; }
   -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
-.intro__art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.intro__art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; filter: var(--paint); }
 /* the frame's open area inside the painting */
 .intro__stage .fit-box { left: 25%; right: 25%; top: 35%; bottom: 31%; }
 
@@ -228,7 +230,7 @@ ol { list-style: none; }
 }
 /* Portrait painting with its frame baked in (assets/invitation-bg.webp). Text is HTML on top.
    If you replace the image, adjust --inv-ratio and the three insets below so the text sits inside the frame. */
-.invite__backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(18px) saturate(.9) brightness(.92); transform: scale(1.1); z-index: 0; }
+.invite__backdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(18px) saturate(.75) brightness(.68); transform: scale(1.1); z-index: 0; }
 .invite__card {
   --inv-ratio: 941 / 1672;
   --inv-top: 17%; --inv-side: 17.5%; --inv-bottom: 29%;
@@ -237,13 +239,13 @@ ol { list-style: none; }
   width: min(100%, 720px);
   aspect-ratio: var(--inv-ratio);
 }
-.invite__art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; }
+.invite__art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; filter: var(--paint); }
 .invite__card .fit-box { inset: var(--inv-top) var(--inv-side) var(--inv-bottom); }
 @media (min-width: 721px) {
   .invite__card { -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
 }
 
-.invite__content { display: flex; flex-direction: column; align-items: center; color: #3a2818; --fit: 1; }
+.invite__content { text-shadow: 0 0 8px rgba(248,236,215,.35); display: flex; flex-direction: column; align-items: center; color: #3a2818; --fit: 1; }
 .invite__content > * { margin-top: calc(1.3cqw * var(--fit)); }
 .invite__content > :first-child { margin-top: 0; }
 
@@ -262,7 +264,7 @@ ol { list-style: none; }
 .il-date time { font-size: calc(4.6cqw * var(--fit)); letter-spacing: .08em; text-transform: uppercase; line-height: 1.25; }
 .il-time { font-family: var(--f-label); font-size: calc(3.8cqw * var(--fit)); letter-spacing: .16em; color: var(--brown); }
 .il-venue { display: flex; flex-direction: column; align-items: center; max-width: 100%; }
-.il-venue .v-label { font-family: var(--f-label); font-size: calc(2.8cqw * var(--fit)); letter-spacing: .3em; text-transform: uppercase; color: var(--olive); margin-bottom: calc(.5cqw * var(--fit)); }
+.il-venue .v-label { font-family: var(--f-label); font-size: calc(2.8cqw * var(--fit)); letter-spacing: .3em; text-transform: uppercase; color: #4B3420; margin-bottom: calc(.5cqw * var(--fit)); }
 .il-venue .v-name { font-family: var(--f-text); font-weight: 500; font-size: calc(3.4cqw * var(--fit)); line-height: 1.3; color: var(--brown); }
 .il-venue .v-addr { max-width: 80%; font-family: var(--f-text); font-size: calc(3.1cqw * var(--fit)); line-height: 1.35; }
 
