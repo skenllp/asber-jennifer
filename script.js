@@ -173,7 +173,8 @@
       .to('.hero__names .n, .hero__names .amp', { opacity: 1, y: 0, duration: 1.2, stagger: 0.18 }, '-=0.6')
       .to('.hero__date', { opacity: 1, y: 0, duration: 1 }, '-=0.7')
       .to('.hero__mansion', { opacity: 1, y: 0, duration: 1.3 }, '-=0.6')
-      .to('.player', { opacity: 1, y: 0, duration: 1.1 }, '-=0.9');
+      .to('.player', { opacity: 1, y: 0, duration: 1.1 }, '-=0.9')
+      .to('.hero__scroll', { opacity: 1, duration: 1 }, '-=0.4');
     return tl;
   }
 
@@ -193,6 +194,7 @@
     .to('.intro__enter', { opacity: 1, y: 0, duration: 0.9 }, '-=0.3');
 
   /* --- Hero starting state (revealed on Enter) --- */
+  gsap.set('.hero__scroll', { opacity: 0 });
   gsap.set(['.hero__label', '.hero__names .n', '.hero__names .amp', '.hero__date', '.hero__mansion', '.player'], { opacity: 0, y: 22 });
 
   if (!hasST) {
@@ -222,8 +224,6 @@
     scrollTrigger: { trigger: inv, start: 'top 85%', once: true } });
   gsap.from('.il', { opacity: 0, y: 14, duration: 0.9, ease: 'power2.out', stagger: 0.12, delay: 0.35,
     scrollTrigger: { trigger: inv, start: 'top 70%', once: true } });
-  gsap.from('.invite__rose', { opacity: 0, x: (i) => (i === 0 ? -40 : 40), duration: 1.6, ease: 'power2.out', stagger: 0.2,
-    scrollTrigger: { trigger: '#invitation', start: 'top 60%', once: true } });
 
   /* --- Venue illustration entrance --- */
   gsap.from('[data-venue-art]', { opacity: 0, y: 34, scale: 0.96, duration: 1.5, ease: 'power2.out',

@@ -14,8 +14,8 @@
   <meta property="og:title" content="Asber &amp; Jennifer — Wedding Invitation">
   <meta property="og:description" content="Saturday, 2 January 2027 · 11:30 AM · Parappan Square International Convention Centre, Venniyur, Malappuram">
   <meta property="og:image" content="https://asber-jennifer.vercel.app/assets/og-invitation.jpg">
-  <meta property="og:image:width" content="941">
-  <meta property="og:image:height" content="1671">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://asber-jennifer.vercel.app/assets/og-invitation.jpg">
 
@@ -87,6 +87,9 @@
           </div>
         </div>
       </div>
+      <a class="hero__scroll" href="#countdown" aria-label="Scroll down to the countdown">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
       <audio id="bgm" loop preload="none" src="assets/wedding-music.mp3"></audio>
     </section>
 
@@ -108,15 +111,10 @@
 
     <!-- ============ SCENE 4 — FORMAL WEDDING INVITATION ============ -->
     <section class="invite" id="invitation" aria-labelledby="inviteTitle">
-      <div class="bg" aria-hidden="true">
-        <img src="assets/countryside.webp" alt="" width="1672" height="941" loading="lazy">
-      </div>
-      <img class="invite__rose invite__rose--l" src="assets/rose-vine.png" alt="" width="640" height="1603" loading="lazy">
-      <img class="invite__rose invite__rose--r" src="assets/rose-vine.png" alt="" width="640" height="1603" loading="lazy">
+      <img class="invite__backdrop" src="assets/invitation-bg.webp" alt="" aria-hidden="true" width="941" height="1672" loading="lazy">
 
       <article class="invite__card" id="inviteCard" data-fit>
-        <div class="paper" aria-hidden="true"></div>
-        <img class="frame-img" src="assets/invitation-frame.png" alt="" width="934" height="1515" loading="lazy">
+        <img class="invite__art" src="assets/invitation-bg.webp" alt="" width="941" height="1672" loading="lazy">
         <div class="fit-box">
           <div class="fit-content invite__content">
             <h2 class="il il-bismillah" id="inviteTitle">In the name of Allah, the Most Gracious, the Most Merciful.</h2>
@@ -208,6 +206,10 @@
       <blockquote class="blessing__quote" data-reveal>
         <p>May Allah bless you, and bless your union, and bring you together in goodness.</p>
       </blockquote>
+      <p class="blessing__from" data-reveal>
+        <span class="blessing__lead">With Duas, Love &amp; Blessings</span>
+        <span class="blessing__names">Safa, Adam, Moideen and the Entire Family</span>
+      </p>
     </section>
 
     <!-- ============ SCENE 8 — SAVE THE DATE / RSVP / FOOTER ============ -->
