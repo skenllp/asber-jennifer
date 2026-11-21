@@ -20,6 +20,7 @@
   <meta name="twitter:image" content="https://asber-jennifer.vercel.app/assets/og-invitation.jpg">
 
   <link rel="preload" as="image" href="assets/opening-bg.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/hero-bg.webp" type="image/webp">
   <link rel="preload" as="image" href="assets/countryside.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,8 +54,9 @@
 
     <!-- ============ SCENE 2 — MAIN HERO + MUSIC PLAYER ============ -->
     <section class="hero" id="home" aria-labelledby="heroTitle">
-      <div class="bg" aria-hidden="true">
-        <img src="assets/countryside.webp" alt="" width="1672" height="941">
+      <img class="hero__backdrop" src="assets/hero-bg.webp" alt="" aria-hidden="true" width="914" height="1600">
+      <div class="hero__stage" aria-hidden="true">
+        <img class="hero__art" src="assets/hero-bg.webp" alt="" width="914" height="1600" fetchpriority="high">
       </div>
       <div class="hero__veil" aria-hidden="true"></div>
 
@@ -66,10 +68,9 @@
           <span class="n">Jennifer</span>
         </h1>
         <p class="hero__date"><time datetime="2027-01-02">Saturday, 2 January 2027</time></p>
+      </div>
 
-        <div class="hero__stage">
-          <img class="hero__mansion" src="assets/mansion.png" alt="Decorative illustration of an ornate Baroque mansion" width="1000" height="808">
-
+      <div class="hero__anchor">
           <div class="player">
             <svg class="tonearm" id="tonearm" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
               <circle cx="84" cy="12" r="8" fill="#B89B6A" stroke="#392B20" stroke-width="1.5"/>
@@ -85,7 +86,6 @@
             </button>
             <p class="player__note" id="musicNote" role="status" aria-live="polite"></p>
           </div>
-        </div>
       </div>
       <a class="hero__scroll" href="#countdown" aria-label="Scroll down to the countdown">
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -140,6 +140,7 @@
             <img class="il il-rule" src="assets/gold-divider.png" alt="" width="1400" height="178" loading="lazy">
 
             <p class="il il-date">
+              <span class="nikah">Nikah Ceremony</span>
               <span class="day">Saturday</span>
               <time datetime="2027-01-02T11:30:00+05:30">2 January 2027</time>
             </p>
@@ -169,34 +170,62 @@
 
     <!-- ============ SCENE 6 — EVENT TIMELINE ============ -->
     <section class="flow" id="events" aria-labelledby="flowTitle">
-      <div class="bg" aria-hidden="true">
-        <img src="assets/countryside.webp" alt="" width="1672" height="941" loading="lazy">
-      </div>
-      <div class="flow__veil" aria-hidden="true"></div>
+      <img class="flow__backdrop" src="assets/event-bg.webp" alt="" aria-hidden="true" width="928" height="1600" loading="lazy">
+      <div class="flow__stage">
+        <img class="flow__art" src="assets/event-bg.webp" alt="" aria-hidden="true" width="928" height="1600" loading="lazy">
+        <div class="flow__inner">
+          <h2 class="script-h script-h--dark" id="flowTitle" data-reveal>Event Flow</h2>
 
-      <div class="flow__inner">
-        <h2 class="script-h script-h--dark" id="flowTitle" data-reveal>Event Flow</h2>
-
-        <ol class="timeline" id="timeline">
-          <li class="tl-orn tl-orn--top" aria-hidden="true">
-            <img src="assets/botanical-vine.png" alt="" width="530" height="1536" loading="lazy">
-          </li>
-          <li class="tl-item">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <div class="tl-text">
-              <p class="tl-time">11:30 AM</p>
-              <h3 class="tl-title">Nikah Ceremony</h3>
-              <p class="tl-date">Saturday, 2 January 2027</p>
-              <p class="tl-place">Parappan Square International Convention Centre</p>
-            </div>
-            <div class="tl-art">
-              <img src="assets/mosque.png" alt="Decorative illustration of a mosque with botanical flourishes" width="820" height="847" loading="lazy">
-            </div>
-          </li>
-          <li class="tl-orn tl-orn--bottom" aria-hidden="true">
-            <img src="assets/botanical-vine.png" alt="" width="530" height="1536" loading="lazy">
-          </li>
-        </ol>
+          <!-- Events alternate left / right automatically. To add a time to an event, add
+               <p class="tl-time">TIME</p> above its <h3 class="tl-title">. -->
+          <ol class="timeline" id="timeline">
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-dining.png" alt="Illustration of a dining place setting" width="640" height="640" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <h3 class="tl-title">Guests Arrival</h3>
+              </div>
+            </li>
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-mosque.png" alt="Illustration of a mosque with flowers" width="476" height="477" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <p class="tl-time">11:30 AM</p>
+                <h3 class="tl-title">Nikah Ceremony</h3>
+                <p class="tl-date">Saturday, 2 January 2027</p>
+                <p class="tl-place">Parappan Square International Convention Centre</p>
+              </div>
+            </li>
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-rings.png" alt="Illustration of wedding rings tied with a ribbon" width="640" height="640" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <h3 class="tl-title">Arrival of Bride and Groom</h3>
+              </div>
+            </li>
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-cake.png" alt="Illustration of a floral wedding cake" width="363" height="446" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <h3 class="tl-title">Cake Cutting Ceremony</h3>
+              </div>
+            </li>
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-camera.png" alt="Illustration of a vintage camera with flowers" width="442" height="283" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <h3 class="tl-title">Photography Session</h3>
+              </div>
+            </li>
+            <li class="tl-item">
+              <div class="tl-art"><img class="tl-icon" src="assets/ev-car.png" alt="Illustration of a vintage wedding car with a veil" width="474" height="262" loading="lazy"></div>
+              <svg class="tl-heart" viewBox="0 0 24 22" aria-hidden="true" focusable="false"><path d="M12 21C5 15.5 1.5 12 1.5 7.6 1.5 4.4 3.9 2 7 2c2 0 3.9 1 5 2.8C13.1 3 15 2 17 2c3.1 0 5.5 2.4 5.5 5.6 0 4.4-3.5 7.9-10.5 13.4z" fill="currentColor"/></svg>
+              <div class="tl-text">
+                <h3 class="tl-title">Departure</h3>
+              </div>
+            </li>
+          </ol>
+        </div>
       </div>
     </section>
 

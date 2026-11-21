@@ -172,7 +172,6 @@
     tl.to('.hero__label', { opacity: 1, y: 0, duration: 1 })
       .to('.hero__names .n, .hero__names .amp', { opacity: 1, y: 0, duration: 1.2, stagger: 0.18 }, '-=0.6')
       .to('.hero__date', { opacity: 1, y: 0, duration: 1 }, '-=0.7')
-      .to('.hero__mansion', { opacity: 1, y: 0, duration: 1.3 }, '-=0.6')
       .to('.player', { opacity: 1, y: 0, duration: 1.1 }, '-=0.9')
       .to('.hero__scroll', { opacity: 1, duration: 1 }, '-=0.4');
     return tl;
@@ -195,7 +194,7 @@
 
   /* --- Hero starting state (revealed on Enter) --- */
   gsap.set('.hero__scroll', { opacity: 0 });
-  gsap.set(['.hero__label', '.hero__names .n', '.hero__names .amp', '.hero__date', '.hero__mansion', '.player'], { opacity: 0, y: 22 });
+  gsap.set(['.hero__label', '.hero__names .n', '.hero__names .amp', '.hero__date', '.player'], { opacity: 0, y: 22 });
 
   if (!hasST) {
     // Without ScrollTrigger just make sure nothing stays hidden after Enter.
@@ -203,7 +202,7 @@
   }
 
   /* --- Parallax on the countryside painting --- */
-  $$('.hero .bg img, .invite .bg img, .flow .bg img, .closing .bg img').forEach(img => {
+  $$('.closing .bg img').forEach(img => {
     gsap.fromTo(img, { yPercent: -4 }, {
       yPercent: 4, ease: 'none',
       scrollTrigger: { trigger: img.closest('section'), start: 'top bottom', end: 'bottom top', scrub: true }
@@ -231,9 +230,11 @@
 
   /* --- Timeline: line draws, then items stagger --- */
   const timeline = $('#timeline');
-  gsap.from(['.tl-orn--top', '.tl-dot', '.tl-text > *', '.tl-art', '.tl-orn--bottom'], {
-    opacity: 0, y: 22, duration: 0.9, ease: 'power2.out', stagger: 0.14,
-    scrollTrigger: { trigger: timeline, start: 'top 75%', once: true }
+  $$('.tl-item').forEach(item => {
+    gsap.from($$('.tl-art, .tl-heart, .tl-text', item), {
+      opacity: 0, y: 22, duration: 0.9, ease: 'power2.out', stagger: 0.12,
+      scrollTrigger: { trigger: item, start: 'top 88%', once: true }
+    });
   });
 
   window.addEventListener('load', () => ScrollTrigger.refresh());
